@@ -3,23 +3,34 @@ using static System.Console;
 
 #region Example
 
-Example.IA test = new Example.MyClass();
+Example.IB test = new Example.MyClass();
 test.M();
-(test as Example.I1)!.M1();
+(test as Example.I1)!.M1();// must be casted to use because classes don't inherit this from interfaces
+
+//TODO: look for base(Interface).invocation()
 
 Derived.Main();
 
 namespace Example
 {
-    
-    class MyClass : IA, I1 { }
+
+    class MyClass : IB, I1, IC
+    {
+    }
     interface IA
     {
         void M() { WriteLine("IA.M"); }
     }
-    interface IB : IA
+    
+    interface IAA
+    {
+        void M() { WriteLine("IA.M"); }
+    }
+    interface IB : IA, IAA
     {
         void IA.M() { WriteLine("IB.M"); } // Explicit implementation
+        
+        new void M() {  } // new keyword
     }
     interface IC : IA
     {

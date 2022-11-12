@@ -1,8 +1,9 @@
 - Key takeaways
     - Provide default implementation in interfaces
-    - Must be **casted** to appropriate Interface to use such method
     - Enables **traits** programming
     - Can be reabstracted, ie. abstracted by derived interface
+    - Classes **don't inherit** default methods, hence you **cannot call it directly** from class - must be **casted** to appropriate Interface to use such method
+
 - Pros
     - Easier inheritance behaviour modeling
     - Better support for multi-inheritance
