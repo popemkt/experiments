@@ -4,9 +4,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playground", "Playground", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{9B57941A-958F-4F59-9E82-8C5D67BAE694}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuriouslyRecurringGenericPattern", "CuriouslyRecurringGenericPattern\CuriouslyRecurringGenericPattern.csproj", "{9C9D148C-F15B-4F69-90A4-695874701A29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuriouslyRecurringGenericPattern", "dotnet\CuriouslyRecurringGenericPattern\CuriouslyRecurringGenericPattern.csproj", "{9C9D148C-F15B-4F69-90A4-695874701A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultInterfaceMethod", "DefaultInterfaceMethod\DefaultInterfaceMethod.csproj", "{62CDC75A-1655-453F-8A36-0E477AEE68D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultInterfaceMethod", "dotnet\DefaultInterfaceMethod\DefaultInterfaceMethod.csproj", "{62CDC75A-1655-453F-8A36-0E477AEE68D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveObsession", "dotnet\PrimitiveObsession\PrimitiveObsession.csproj", "{C8DD7AC9-0C43-481A-A243-CB64540DAB48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject", "Samples\SampleProject\SampleProject.csproj", "{DA452D87-6450-4840-BF43-8DD8F79DFDB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{D2CF0955-28BA-499E-93CE-20422B26602F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,6 +22,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9C9D148C-F15B-4F69-90A4-695874701A29} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
 		{62CDC75A-1655-453F-8A36-0E477AEE68D1} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
+		{C8DD7AC9-0C43-481A-A243-CB64540DAB48} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
+		{DA452D87-6450-4840-BF43-8DD8F79DFDB8} = {D2CF0955-28BA-499E-93CE-20422B26602F}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9C9D148C-F15B-4F69-90A4-695874701A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -26,5 +34,13 @@ Global
 		{62CDC75A-1655-453F-8A36-0E477AEE68D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62CDC75A-1655-453F-8A36-0E477AEE68D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62CDC75A-1655-453F-8A36-0E477AEE68D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8DD7AC9-0C43-481A-A243-CB64540DAB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8DD7AC9-0C43-481A-A243-CB64540DAB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8DD7AC9-0C43-481A-A243-CB64540DAB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8DD7AC9-0C43-481A-A243-CB64540DAB48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA452D87-6450-4840-BF43-8DD8F79DFDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA452D87-6450-4840-BF43-8DD8F79DFDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA452D87-6450-4840-BF43-8DD8F79DFDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA452D87-6450-4840-BF43-8DD8F79DFDB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
