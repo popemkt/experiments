@@ -7,7 +7,7 @@ Example.IB test = new Example.MyClass();
 test.M();
 (test as Example.I1)!.M1();// must be casted to use because classes don't inherit this from interfaces
 
-//TODO: look for base(Interface).invocation()
+//TODO: look for base(Interface).invocation() => this is left out in the final implementation
 
 Derived.Main();
 
