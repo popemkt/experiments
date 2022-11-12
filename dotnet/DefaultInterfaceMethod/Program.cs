@@ -2,27 +2,61 @@
 using static System.Console;
 
 #region Example
-IA test = new MyClass();
+
+Example.IA test = new Example.MyClass();
 test.M();
-(test as I1)!.M1();
-class MyClass : IA, I1 { }
-interface IA
+(test as Example.I1)!.M1();
+
+Derived.Main();
+
+namespace Example
 {
-    void M() { WriteLine("IA.M"); }
+    
+    class MyClass : IA, I1 { }
+    interface IA
+    {
+        void M() { WriteLine("IA.M"); }
+    }
+    interface IB : IA
+    {
+        void IA.M() { WriteLine("IB.M"); } // Explicit implementation
+    }
+    interface IC : IA
+    {
+        void M() { WriteLine("IC.M"); } // Creates a new M, unrelated to `IA.M`. Warning
+    }
+
+    interface I1
+    {
+        void M1() {WriteLine("M1");}
+    }
+
 }
-interface IB : IA
+#endregion
+
+#region Diamond Inheritance 
+
+interface IA2
 {
-    void IA.M() { WriteLine("IB.M"); } // Explicit implementation
+    void M();
 }
-interface IC : IA
+interface IB2 : IA2
 {
-    void M() { WriteLine("IC.M"); } // Creates a new M, unrelated to `IA.M`. Warning
+    new void M() { WriteLine("IB"); }
+}
+class Base : IA2
+{
+    void IA2.M() { WriteLine("Base"); }
+}
+class Derived : Base, IB2 // allowed?
+{
+    public static void Main()
+    {
+        IA2 a = new Derived();
+        a.M();           // what does it do? Class takes precedence => Base.M()
+    }
 }
 
-interface I1
-{
-    void M1() {WriteLine("M1");}
-}
 #endregion
 
 #region Reabstraction
