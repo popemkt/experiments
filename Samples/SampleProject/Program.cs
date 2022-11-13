@@ -1,3 +1,0 @@
-﻿// ref:
-
-Console.WriteLine("Placeholder");

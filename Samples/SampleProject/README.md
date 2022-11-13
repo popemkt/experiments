@@ -1,3 +1,0 @@
-- Key takeaways
-- Pros
-- Limitations
