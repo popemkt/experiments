@@ -4,11 +4,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playground", "Playground", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{9B57941A-958F-4F59-9E82-8C5D67BAE694}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuriouslyRecurringGenericPattern", "dotnet\CuriouslyRecurringGenericPattern\CuriouslyRecurringGenericPattern.csproj", "{9C9D148C-F15B-4F69-90A4-695874701A29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuriouslyRecurringGenericPattern", "dotnet\patterns\CuriouslyRecurringGenericPattern\CuriouslyRecurringGenericPattern.csproj", "{9C9D148C-F15B-4F69-90A4-695874701A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultInterfaceMethod", "dotnet\DefaultInterfaceMethod\DefaultInterfaceMethod.csproj", "{62CDC75A-1655-453F-8A36-0E477AEE68D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultInterfaceMethod", "dotnet\patterns\DefaultInterfaceMethod\DefaultInterfaceMethod.csproj", "{62CDC75A-1655-453F-8A36-0E477AEE68D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveObsession", "dotnet\PrimitiveObsession\PrimitiveObsession.csproj", "{C8DD7AC9-0C43-481A-A243-CB64540DAB48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveObsession", "dotnet\patterns\PrimitiveObsession\PrimitiveObsession.csproj", "{C8DD7AC9-0C43-481A-A243-CB64540DAB48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject", "Samples\SampleProject\SampleProject.csproj", "{DA452D87-6450-4840-BF43-8DD8F79DFDB8}"
 EndProject
@@ -20,16 +20,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Package.props = Directory.Package.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiVersioningSwagger", "dotnet\configurations\ApiVersioningSwagger\ApiVersioningSwagger.csproj", "{A52E4D9D-BAE6-4B9B-B608-C9A2E1A8AF8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "patterns", "patterns", "{494D0280-F530-49FB-A426-65A74CD86C90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configurations", "configurations", "{A312C434-6024-435C-BE49-134420005387}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{9C9D148C-F15B-4F69-90A4-695874701A29} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
-		{62CDC75A-1655-453F-8A36-0E477AEE68D1} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
-		{C8DD7AC9-0C43-481A-A243-CB64540DAB48} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
 		{DA452D87-6450-4840-BF43-8DD8F79DFDB8} = {D2CF0955-28BA-499E-93CE-20422B26602F}
+		{494D0280-F530-49FB-A426-65A74CD86C90} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
+		{9C9D148C-F15B-4F69-90A4-695874701A29} = {494D0280-F530-49FB-A426-65A74CD86C90}
+		{62CDC75A-1655-453F-8A36-0E477AEE68D1} = {494D0280-F530-49FB-A426-65A74CD86C90}
+		{C8DD7AC9-0C43-481A-A243-CB64540DAB48} = {494D0280-F530-49FB-A426-65A74CD86C90}
+		{A312C434-6024-435C-BE49-134420005387} = {9B57941A-958F-4F59-9E82-8C5D67BAE694}
+		{A52E4D9D-BAE6-4B9B-B608-C9A2E1A8AF8A} = {A312C434-6024-435C-BE49-134420005387}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9C9D148C-F15B-4F69-90A4-695874701A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,5 +57,9 @@ Global
 		{DA452D87-6450-4840-BF43-8DD8F79DFDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA452D87-6450-4840-BF43-8DD8F79DFDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA452D87-6450-4840-BF43-8DD8F79DFDB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52E4D9D-BAE6-4B9B-B608-C9A2E1A8AF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52E4D9D-BAE6-4B9B-B608-C9A2E1A8AF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52E4D9D-BAE6-4B9B-B608-C9A2E1A8AF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52E4D9D-BAE6-4B9B-B608-C9A2E1A8AF8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
