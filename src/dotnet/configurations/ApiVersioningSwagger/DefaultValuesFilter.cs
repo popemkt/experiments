@@ -29,9 +29,13 @@ namespace ApiVersioningSwagger
                     parameter.Description = description.ModelMetadata?.Description;
                 }
 
+                if (parameter.Name == Settings.Header)
+                {
+                    parameter.Schema.Default = new OpenApiString(version.ToString());
+                }
+                
                 parameter.Required = parameter.Required | description.IsRequired;
             }
-            operation.Parameters.Add(new OpenApiParameter { Name = SwaggerConfig.CustomHeaderParam, In = ParameterLocation.Header, Required = false, Schema = new OpenApiSchema { Type = "String", Default = new OpenApiString(version.ToString()) } });
         }
     }
 }
