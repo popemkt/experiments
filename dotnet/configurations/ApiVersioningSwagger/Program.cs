@@ -74,7 +74,7 @@ app.Run();
 
 
 //
-// #region quickApproach
+// #region minimalApproach
 //
 // var builder = WebApplication.CreateBuilder(args);
 //

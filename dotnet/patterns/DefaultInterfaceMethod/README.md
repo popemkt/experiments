@@ -1,3 +1,4 @@
+ref: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/default-interface-methods
 - Key takeaways
     - Provide default implementation in interfaces
     - Enables **traits** programming
