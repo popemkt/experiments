@@ -1,0 +1,208 @@
+2022-11-15 21:34:21.311 +07:00 [INF] User profile is available. Using 'C:\Users\popem\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-15 21:34:22.498 +07:00 [INF] Entity Framework Core 6.0.8 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.8' with options: None
+2022-11-15 21:34:22.848 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2022-11-15 21:34:22.962 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Projects" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Projects" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Priority" INTEGER NOT NULL
+);
+2022-11-15 21:34:22.963 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ToDoItems" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_ToDoItems" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NOT NULL,
+    "Description" TEXT NOT NULL,
+    "IsDone" INTEGER NOT NULL,
+    "ProjectId" INTEGER NULL,
+    CONSTRAINT "FK_ToDoItems_Projects_ProjectId" FOREIGN KEY ("ProjectId") REFERENCES "Projects" ("Id")
+);
+2022-11-15 21:34:22.965 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ToDoItems_ProjectId" ON "ToDoItems" ("ProjectId");
+2022-11-15 21:34:22.993 +07:00 [INF] Entity Framework Core 6.0.8 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.8' with options: None
+2022-11-15 21:34:23.198 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "ToDoItems" AS "t")
+2022-11-15 21:34:23.243 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."Priority"
+FROM "Projects" AS "p"
+2022-11-15 21:34:23.250 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Description", "t"."IsDone", "t"."ProjectId", "t"."Title"
+FROM "ToDoItems" AS "t"
+2022-11-15 21:34:23.445 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 12), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Projects" ("Name", "Priority")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Projects"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2022-11-15 21:34:23.481 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p2='?' (Size = 31), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 18)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ToDoItems" ("Description", "IsDone", "ProjectId", "Title")
+VALUES (@p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "ToDoItems"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2022-11-15 21:34:23.486 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 81), @p1='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ToDoItems" ("Description", "IsDone", "ProjectId", "Title")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "Id"
+FROM "ToDoItems"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2022-11-15 21:34:23.491 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 59), @p1='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ToDoItems" ("Description", "IsDone", "ProjectId", "Title")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "Id"
+FROM "ToDoItems"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2022-11-15 21:34:23.685 +07:00 [INF] Now listening on: http://localhost:57679
+2022-11-15 21:34:23.688 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-15 21:34:23.688 +07:00 [INF] Hosting environment: Development
+2022-11-15 21:34:23.689 +07:00 [INF] Content root path: C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\
+2022-11-15 21:34:24.356 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2022-11-15 21:34:24.405 +07:00 [WRN] Failed to determine the https port for redirect.
+2022-11-15 21:34:24.454 +07:00 [INF] Executing endpoint 'CleanArchitecture.Web.Controllers.HomeController.Index (CleanArchitecture.Web)'
+2022-11-15 21:34:24.465 +07:00 [INF] Route matched with {action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CleanArchitecture.Web.Controllers.HomeController (CleanArchitecture.Web).
+2022-11-15 21:34:24.484 +07:00 [INF] Executing ViewResult, running view Index.
+2022-11-15 21:34:24.654 +07:00 [INF] Executed ViewResult - view Index executed in 174.9067ms.
+2022-11-15 21:34:24.657 +07:00 [INF] Executed action CleanArchitecture.Web.Controllers.HomeController.Index (CleanArchitecture.Web) in 190.1466ms
+2022-11-15 21:34:24.659 +07:00 [INF] Executed endpoint 'CleanArchitecture.Web.Controllers.HomeController.Index (CleanArchitecture.Web)'
+2022-11-15 21:34:24.668 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 200 - text/html;+charset=utf-8 315.4710ms
+2022-11-15 21:34:24.705 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/css/bootstrap.min.css - -
+2022-11-15 21:34:24.760 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - -
+2022-11-15 21:34:24.774 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - -
+2022-11-15 21:34:24.779 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2022-11-15 21:34:24.776 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - -
+2022-11-15 21:34:24.779 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/jquery/dist/jquery.min.js - -
+2022-11-15 21:34:24.821 +07:00 [INF] Sending file. Request path: '/CleanArchitecture.Web.styles.css'. Physical path: 'C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\obj\Debug\net6.0\scopedcss\bundle\CleanArchitecture.Web.styles.css'
+2022-11-15 21:34:24.821 +07:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2022-11-15 21:34:24.821 +07:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\wwwroot\js\site.js'
+2022-11-15 21:34:24.821 +07:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2022-11-15 21:34:24.821 +07:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\wwwroot\css\site.css'
+2022-11-15 21:34:24.821 +07:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\wwwroot\lib\jquery\dist\jquery.min.js'
+2022-11-15 21:34:24.822 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - - - 200 1138 text/css 45.2952ms
+2022-11-15 21:34:24.824 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - - - 200 230 application/javascript 52.0773ms
+2022-11-15 21:34:24.824 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/css/bootstrap.min.css - - - 200 162726 text/css 119.3696ms
+2022-11-15 21:34:24.825 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 200 78474 application/javascript 45.4945ms
+2022-11-15 21:34:24.826 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - - - 200 194 text/css 66.9450ms
+2022-11-15 21:34:24.830 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/jquery/dist/jquery.min.js - - - 200 89478 application/javascript 50.3748ms
+2022-11-15 21:34:25.347 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/favicon.ico - -
+2022-11-15 21:34:25.350 +07:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\popem\RiderProjects\Experiments\src\dotnet\templates\Ardalis\CleanArchitecture\src\CleanArchitecture.Web\wwwroot\favicon.ico'
+2022-11-15 21:34:25.352 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/favicon.ico - - - 200 5430 image/x-icon 4.1412ms
+2022-11-15 21:34:41.233 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2022-11-15 21:34:41.234 +07:00 [INF] Executing endpoint 'CleanArchitecture.Web.Controllers.HomeController.Index (CleanArchitecture.Web)'
+2022-11-15 21:34:41.238 +07:00 [INF] Route matched with {action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CleanArchitecture.Web.Controllers.HomeController (CleanArchitecture.Web).
+2022-11-15 21:34:41.241 +07:00 [INF] Executing ViewResult, running view Index.
+2022-11-15 21:34:41.243 +07:00 [INF] Executed ViewResult - view Index executed in 3.0459ms.
+2022-11-15 21:34:41.244 +07:00 [INF] Executed action CleanArchitecture.Web.Controllers.HomeController.Index (CleanArchitecture.Web) in 4.4193ms
+2022-11-15 21:34:41.245 +07:00 [INF] Executed endpoint 'CleanArchitecture.Web.Controllers.HomeController.Index (CleanArchitecture.Web)'
+2022-11-15 21:34:41.246 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 200 - text/html;+charset=utf-8 13.0196ms
+2022-11-15 21:34:41.294 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/css/bootstrap.min.css - -
+2022-11-15 21:34:41.294 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - -
+2022-11-15 21:34:41.294 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - -
+2022-11-15 21:34:41.294 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/jquery/dist/jquery.min.js - -
+2022-11-15 21:34:41.294 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2022-11-15 21:34:41.294 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - -
+2022-11-15 21:34:41.301 +07:00 [INF] The file /css/site.css was not modified
+2022-11-15 21:34:41.301 +07:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2022-11-15 21:34:41.301 +07:00 [INF] The file /CleanArchitecture.Web.styles.css was not modified
+2022-11-15 21:34:41.301 +07:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2022-11-15 21:34:41.302 +07:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2022-11-15 21:34:41.303 +07:00 [INF] The file /js/site.js was not modified
+2022-11-15 21:34:41.304 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - - - 304 - text/css 10.1752ms
+2022-11-15 21:34:41.305 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/css/bootstrap.min.css - - - 304 - text/css 10.8253ms
+2022-11-15 21:34:41.305 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - - - 304 - text/css 11.4549ms
+2022-11-15 21:34:41.306 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 12.0192ms
+2022-11-15 21:34:41.307 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 304 - application/javascript 12.8706ms
+2022-11-15 21:34:41.308 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - - - 304 - application/javascript 13.8595ms
+2022-11-15 21:34:55.360 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ProjectDetails/1 - -
+2022-11-15 21:34:55.361 +07:00 [INF] Executing endpoint '/ProjectDetails/Index'
+2022-11-15 21:34:55.375 +07:00 [INF] Route matched with {page = "/ProjectDetails/Index", action = "", controller = ""}. Executing page /ProjectDetails/Index
+2022-11-15 21:34:55.406 +07:00 [INF] Executing handler method CleanArchitecture.Web.Pages.ProjectDetails.IndexModel.OnGetAsync - ModelState is "Valid"
+2022-11-15 21:34:55.434 +07:00 [INF] Entity Framework Core 6.0.8 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.8' with options: None
+2022-11-15 21:34:55.569 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__projectId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Name", "t"."Priority", "t0"."Id", "t0"."Description", "t0"."IsDone", "t0"."ProjectId", "t0"."Title"
+FROM (
+    SELECT "p"."Id", "p"."Name", "p"."Priority"
+    FROM "Projects" AS "p"
+    WHERE "p"."Id" = @__projectId_0
+    LIMIT 1
+) AS "t"
+LEFT JOIN "ToDoItems" AS "t0" ON "t"."Id" = "t0"."ProjectId"
+ORDER BY "t"."Id"
+2022-11-15 21:34:55.591 +07:00 [INF] Executed handler method OnGetAsync, returned result .
+2022-11-15 21:34:55.595 +07:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-11-15 21:34:55.596 +07:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-11-15 21:34:55.606 +07:00 [INF] Executed page /ProjectDetails/Index in 230.6752ms
+2022-11-15 21:34:55.607 +07:00 [INF] Executed endpoint '/ProjectDetails/Index'
+2022-11-15 21:34:55.611 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ProjectDetails/1 - - - 200 - text/html;+charset=utf-8 250.9610ms
+2022-11-15 21:34:55.643 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/css/bootstrap.min.css - -
+2022-11-15 21:34:55.643 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - -
+2022-11-15 21:34:55.644 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - -
+2022-11-15 21:34:55.644 +07:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2022-11-15 21:34:55.645 +07:00 [INF] The file /css/site.css was not modified
+2022-11-15 21:34:55.646 +07:00 [INF] The file /CleanArchitecture.Web.styles.css was not modified
+2022-11-15 21:34:55.647 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/css/bootstrap.min.css - - - 304 - text/css 4.1713ms
+2022-11-15 21:34:55.648 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - - - 304 - text/css 4.9504ms
+2022-11-15 21:34:55.649 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - - - 304 - text/css 5.4943ms
+2022-11-15 21:34:55.667 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/jquery/dist/jquery.min.js - -
+2022-11-15 21:34:55.667 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2022-11-15 21:34:55.667 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - -
+2022-11-15 21:34:55.668 +07:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2022-11-15 21:34:55.671 +07:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2022-11-15 21:34:55.672 +07:00 [INF] The file /js/site.js was not modified
+2022-11-15 21:34:55.673 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 6.2974ms
+2022-11-15 21:34:55.675 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 304 - application/javascript 7.5706ms
+2022-11-15 21:34:55.680 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - - - 304 - application/javascript 13.1640ms
+2022-11-15 21:35:07.970 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ProjectDetails/Incomplete - -
+2022-11-15 21:35:07.972 +07:00 [INF] Executing endpoint '/ProjectDetails/Incomplete'
+2022-11-15 21:35:07.974 +07:00 [INF] Route matched with {page = "/ProjectDetails/Incomplete", action = "", controller = ""}. Executing page /ProjectDetails/Incomplete
+2022-11-15 21:35:07.976 +07:00 [INF] Executing handler method CleanArchitecture.Web.Pages.ProjectDetails.IncompleteModel.OnGetAsync - ModelState is "Valid"
+2022-11-15 21:35:07.978 +07:00 [INF] Entity Framework Core 6.0.8 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.8' with options: None
+2022-11-15 21:35:07.984 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[@__projectId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Name", "t"."Priority", "t0"."Id", "t0"."Description", "t0"."IsDone", "t0"."ProjectId", "t0"."Title"
+FROM (
+    SELECT "p"."Id", "p"."Name", "p"."Priority"
+    FROM "Projects" AS "p"
+    WHERE "p"."Id" = @__projectId_0
+    LIMIT 1
+) AS "t"
+LEFT JOIN "ToDoItems" AS "t0" ON "t"."Id" = "t0"."ProjectId"
+ORDER BY "t"."Id"
+2022-11-15 21:35:07.986 +07:00 [INF] Executed handler method OnGetAsync, returned result .
+2022-11-15 21:35:07.987 +07:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-11-15 21:35:07.987 +07:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-11-15 21:35:07.992 +07:00 [INF] Executed page /ProjectDetails/Incomplete in 17.1406ms
+2022-11-15 21:35:07.993 +07:00 [INF] Executed endpoint '/ProjectDetails/Incomplete'
+2022-11-15 21:35:07.994 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ProjectDetails/Incomplete - - - 200 - text/html;+charset=utf-8 23.7507ms
+2022-11-15 21:35:08.039 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - -
+2022-11-15 21:35:08.040 +07:00 [INF] The file /CleanArchitecture.Web.styles.css was not modified
+2022-11-15 21:35:08.041 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/CleanArchitecture.Web.styles.css?v=SExSNWpXTdG_B2ZJ4z9ohkzQ72lxqeBA6yi5SHeR7H4 - - - 304 - text/css 1.8741ms
+2022-11-15 21:35:12.791 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger - -
+2022-11-15 21:35:12.793 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger - - - 301 0 - 1.5714ms
+2022-11-15 21:35:12.803 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2022-11-15 21:35:12.850 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 46.6139ms
+2022-11-15 21:35:12.876 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/swagger-ui.css - -
+2022-11-15 21:35:12.888 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-11-15 21:35:12.890 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/swagger-ui-standalone-preset.js - -
+2022-11-15 21:35:12.891 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/swagger-ui.css - - - 200 143943 text/css 14.8062ms
+2022-11-15 21:35:12.894 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/swagger-ui-bundle.js - -
+2022-11-15 21:35:12.896 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-11-15 21:35:12.903 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 12.6753ms
+2022-11-15 21:35:12.904 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-11-15 21:35:12.914 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 20.2662ms
+2022-11-15 21:35:13.165 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2022-11-15 21:35:13.204 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/favicon-32x32.png - -
+2022-11-15 21:35:13.205 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-11-15 21:35:13.206 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/favicon-32x32.png - - - 200 628 image/png 1.9729ms
+2022-11-15 21:35:13.296 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.0997ms
+2022-11-15 21:35:20.221 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/Projects - -
+2022-11-15 21:35:20.222 +07:00 [INF] Executing endpoint 'CleanArchitecture.Web.Endpoints.ProjectEndpoints.List.HandleAsync (CleanArchitecture.Web)'
+2022-11-15 21:35:20.227 +07:00 [INF] Route matched with {action = "Handle", controller = "List", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CleanArchitecture.Web.Endpoints.ProjectEndpoints.ProjectListResponse]] HandleAsync(System.Threading.CancellationToken) on controller CleanArchitecture.Web.Endpoints.ProjectEndpoints.List (CleanArchitecture.Web).
+2022-11-15 21:35:20.240 +07:00 [INF] Entity Framework Core 6.0.8 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.8' with options: None
+2022-11-15 21:35:20.246 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."Priority"
+FROM "Projects" AS "p"
+2022-11-15 21:35:20.255 +07:00 [INF] Executing OkObjectResult, writing value of type 'CleanArchitecture.Web.Endpoints.ProjectEndpoints.ProjectListResponse'.
+2022-11-15 21:35:20.379 +07:00 [INF] Executed action CleanArchitecture.Web.Endpoints.ProjectEndpoints.List.HandleAsync (CleanArchitecture.Web) in 145.1423ms
+2022-11-15 21:35:20.381 +07:00 [INF] Executed endpoint 'CleanArchitecture.Web.Endpoints.ProjectEndpoints.List.HandleAsync (CleanArchitecture.Web)'
+2022-11-15 21:35:20.382 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/Projects - - - 200 45 application/json;+charset=utf-8 161.3068ms
