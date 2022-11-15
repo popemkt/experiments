@@ -1,0 +1,3 @@
+[submodule "src/dotnet/templates/thang-chung/clean-arch"]
+	path = src/dotnet/templates/thang-chung/clean-arch
+	url = https://github.com/thangchung/clean-architecture-dotnet.git

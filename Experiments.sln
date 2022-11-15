@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Integrati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.UnitTests", "src\dotnet\templates\Ardalis\CleanArchitecture\tests\CleanArchitecture.UnitTests\CleanArchitecture.UnitTests.csproj", "{3D365B63-F138-413C-9532-969603A12358}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "thang-chung", "thang-chung", "{40F35F6F-06EF-4A25-A5A6-33FC08A0E65C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,7 @@ Global
 		{6D843859-C87E-480D-9B1E-1C2BF016295D} = {8C274CA7-AC4E-4ADF-880A-847CB40D379E}
 		{446BC60F-FFF9-4DB9-A652-F91748C315EC} = {8C274CA7-AC4E-4ADF-880A-847CB40D379E}
 		{3D365B63-F138-413C-9532-969603A12358} = {8C274CA7-AC4E-4ADF-880A-847CB40D379E}
+		{40F35F6F-06EF-4A25-A5A6-33FC08A0E65C} = {BD261864-7529-4A97-A21C-6A2D56121DE8}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9C9D148C-F15B-4F69-90A4-695874701A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
